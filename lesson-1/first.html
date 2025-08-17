@@ -7,37 +7,23 @@
     <link rel="stylesheet" href="first.css">
 </head>
 <body>
-    <script type="module">
-    import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1.11.13/+esm'
-        const now = dayjs();
-        const mmdi = "mmdi";
-        const now2 = now.format('HH');
-        document.body.innerHTML = `
-            <button class = "start">start</button>
-        `;
-        let Thenum = 0;
-        let start = document.querySelector('.start');
-        start.addEventListener ('click', () => {
-            numberCreate ();
-        })
-        function numberCreate () {
-            Thenum = Math.random();
-            if (Thenum.Math.round() >= 0.5) {
-                console.log ('head');
+    <script>
+        let num = 0;
+        function gene () {
+            num = Math.random();
+            if (num > 0.5) {
+                console.log('head');
             }else {
                 console.log ('tale');
             }
-
-        } 
-       if (now2 > 6 && now2 < 12) {
-            console.log (`its ${now2} Good morning ${mmdi}`);
-        }else if (now2 >= 12 && now2 < 20) {
-            console.log (`its ${now2} Good afternoon ${mmdi}`);
-        }else {
-            console.log (`its ${now2}Good evening ${mmdi}`);
         }
-
-        
+        document.body.innerHTML = `
+            <button class="genere">start</button>
+        `;
+        const num1 = document.querySelector('.genere');
+        num1.addEventListener ('click' , () => {
+            gene();
+        })
     </script>
 
 </body>
