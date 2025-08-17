@@ -1,0 +1,23 @@
+.red {
+    background-color: red;
+    border-style: solid;
+    border-radius: 10%;
+}
+
+.ice {
+    background-color: rgb(255, 242, 0);
+    border-style: solid;
+    border-radius: 10%;
+}
+
+.late {
+    background-color: red;
+    border-style: solid;
+    border-radius: 10%;
+}
+
+.sper {
+    background-color: rgb(255, 208, 0);
+    border-style: solid;
+    border-radius: 10%;
+}
