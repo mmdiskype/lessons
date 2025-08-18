@@ -1,0 +1,8 @@
+js-button {
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(204, 204, 17);
+    color: black;
+    border-style: none;
+}
