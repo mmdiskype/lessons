@@ -8,17 +8,19 @@
 </head>
 <body>
     <script>
-        function tabdil (darage, unit) {
-            if (unit === 'C') {
-                return (darage*9/5)+32;
-            }
-            if (unit === 'F') {
-                return (darage-32)*5/9;
-            }else {
-                return 'undifind';
-            }
+        const pro1 = {
+            name: 'basket',
+            price: 9999
+        };
+        const pro2 = {
+            name: 'basket',
+            price: 9999
         }
-        console.log (tabdil (86,'C'));
+        if (pro1.name === pro2.name && pro1.price === pro2.price) {
+            console.log ('same')
+        }else {
+            console.log ('not same')
+        }
     </script>
 
 </body>
