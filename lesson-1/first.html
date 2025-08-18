@@ -8,22 +8,17 @@
 </head>
 <body>
     <script>
-        let num = 0;
-        function gene () {
-            num = Math.random();
-            if (num > 0.5) {
-                console.log('head');
+        function tabdil (darage, unit) {
+            if (unit === 'C') {
+                return (darage*9/5)+32;
+            }
+            if (unit === 'F') {
+                return (darage-32)*5/9;
             }else {
-                console.log ('tale');
+                return 'undifind';
             }
         }
-        document.body.innerHTML = `
-            <button class="genere">start</button>
-        `;
-        const num1 = document.querySelector('.genere');
-        num1.addEventListener ('click' , () => {
-            gene();
-        })
+        console.log (tabdil (86,'C'));
     </script>
 
 </body>
