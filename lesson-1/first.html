@@ -8,12 +8,19 @@
 </head>
 <body>
     <script>
-        const bnana = [1,1,2,3,4,5];
-        function increas (array) {
-            array = array.map (map => map+1);
-            return array;
+      function minmax (array) {
+        const result= {};
+        for (let i = 0;i < array.length;i++) {
+          const value = array[i];
+          if (!result[value]) {
+            result[value] = 1;
+          }else {
+            result[value]++;
+          }
         }
-        console.log(increas(bnana));
+        return result;
+      }
+      console.log (minmax(['1','2','3','1']));
     </script>
 </body>
 </html>
