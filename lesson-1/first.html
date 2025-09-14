@@ -8,19 +8,17 @@
 </head>
 <body>
     <script>
-      function minmax (array) {
-        const result= {};
-        for (let i = 0;i < array.length;i++) {
-          const value = array[i];
-          if (!result[value]) {
-            result[value] = 1;
-          }else {
-            result[value]++;
+        function unique(array) {
+        const result = [];
+        for (let i = 0; i < array.length; i++) {
+          const word = array[i];
+          if (findIndex(result, word) === -1) {
+            result.push(word);
           }
         }
         return result;
       }
-      console.log (minmax(['1','2','3','1']));
+      console.log(unique(['red', 'green', 'green', 'red']));
     </script>
 </body>
 </html>
