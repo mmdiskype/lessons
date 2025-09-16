@@ -1,12 +1,15 @@
 const container = document.querySelector('.carousel');
 const arrows = document.querySelectorAll('i');
-const basewith = document.querySelector('.card').offsetwidth;
-console.log(basewith)
+const basewith = container.querySelector('.card').offsetWidth;
+const screenm = screen.width;
+console.log(screenm)
 
 arrows.forEach ((button) => {
     const arrowid = button.dataset.way;
     button.addEventListener('click', () => {
+        container.scrollLeft += arrowid === 'left' ? -basewith+16 : basewith+16;
         console.log(arrowid);
+        dragging();
     })
 })
 

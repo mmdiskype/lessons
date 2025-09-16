@@ -9,11 +9,11 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-/* .card :where(.card , .image) {
+.card :where(.card , .image) {
     display: flex;
     align-items: center;
     justify-content: center;
-} */
+}
 
 
 .card .image  img{
@@ -25,15 +25,19 @@ body {
     border-color: #A95E9C;
     border-width: 2px;
 }
+
+
 .carousel .card {
     display: flex;
     background-color: white;
-    border-radius: 16px;
+    border-radius: 6px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 260px;
     min-width: 140px;
+    scroll-snap-align: start;
+    scroll-behavior:smooth;
 }
 
 .wrapper {
@@ -45,8 +49,16 @@ body {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: calc((100%/3) - 12px);
-    gap: 16px;
-    overflow: hidden;
+    gap: 32px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: 0;
+    scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+    
 }
 
 .lefti , .righti {
@@ -59,7 +71,6 @@ body {
     position: relative;
     transform: translateY(-50%);
     box-shadow: 0 3px 6px rgba(0,0,0,0.5);
-    z-index: 2;
 }
 
 .wrapper .lefti {
@@ -73,19 +84,35 @@ body {
      
 }
 
+.carousel.dragging {
+    scroll-behavior: auto;
+    scroll-snap-type:none;
+}
+
 .carousel.dragging .card {
     cursor: grab;
     user-select: none;
+    scroll-behavior: smooth;
+    
+}
+
+.carousel {
+    scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 900px) {
     .wrapper .carousel {
         grid-auto-columns: calc((100%/2) - 12px);
+        gap: 36px
     }
 }
 
 @media screen and (max-width: 600px) {
     .wrapper .carousel {
         grid-auto-columns: calc((100%/1) - 12px);
+        gap: 64px;
+    }
+    .carousel .card {
+        scroll-snap-align: center;
     }
 }
