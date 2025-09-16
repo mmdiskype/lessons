@@ -88,7 +88,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1vh;
+    
 }
 
 .logo {
@@ -109,6 +109,7 @@
 .logoName {
     display: inline-block;
     margin-left: 1vh;
+    color: var(--orange-dark--9);
 }
 
 .logoLink {
@@ -122,6 +123,7 @@
     justify-content: space-between;
     padding-left: 5vh;
     padding-right: 5vh;
+    margin-top: 1vh;
 }
 
 .headerLinks {
@@ -132,6 +134,7 @@
 
 .signB {
     margin-right: 5.5vh;
+    margin-top: 1.5vh;
 }
 
 .signin {
@@ -141,6 +144,7 @@
     color: white;
     background-color: black;
     font-size: var(--sub--3);
+    cursor: pointer;
 }
 
 .hero {
@@ -183,9 +187,10 @@
 .containbu {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-.heroB {
+.heroB, .heroB-secound {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
@@ -195,6 +200,10 @@
     color: white;
     margin-top: 40px;
     border-style: none;
+}
+
+.heroB-secound {
+    margin-left: 24px;
 }
 
 .brandicon {
@@ -212,7 +221,6 @@
     padding-right: 5.5vh;
     height: 140px;
     align-items: center;
-    margin-top: 144px;
 }
 
 .bnana {
@@ -330,14 +338,6 @@
     height: auto;
 }
 
-.expeicon {
-    height: 24px;
-    width: 24px;
-    border-radius: 999px;
-    background-color: red;
-    display: inline-block;
-}
-
 .carddis {
     font-size: var(--body--3);
     line-height: 2rem;
@@ -422,4 +422,48 @@
 .toolcontainer {
     margin-top: 56px;
     padding-bottom: 32px;
+}
+
+.mmdi-logo {
+    width: 32px;
+    height: 32px;
+}
+
+/* .hello {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 120vh;
+    top: 0;
+    object-fit: cover;
+} */
+
+.back {
+    background-image: url('../image/background.svg');
+    padding-bottom: 144px;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.hero-pic {
+    width: 60vh;
+    height: 60vh;
+    margin-right: 5.5vh;
+}
+
+.searchsvg {
+    width: 24px;
+    height: 24px;
+    padding-right: 8px;
+}
+
+.Activity {
+    width: 24px;
+    height: 24px;
+}
+
+.seemore {
+    width: 20px;
+    height: inherit;
+    margin-left: 10px;
 }
