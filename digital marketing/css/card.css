@@ -1,0 +1,146 @@
+.container {
+    width: 1500px;
+}
+
+.container .card, .container .card-extra {
+    width: 220px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: #FCFCFC;
+    margin-top: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.holder .container{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100%/5) - 32px);
+    gap: 32px;
+    overflow: hidden;
+    align-items: center;
+    justify-items: center
+}
+
+
+.container {
+    max-width: 100%;
+}
+
+.card, .card-extra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow:first-child {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.arrow:last-child {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.arrowes {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 160px;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.button1, .button2, .button3, .button4, .button5
+, .button6, .button7, .button8, .button9, .button10 {
+    width: 12px;
+    height: 12px;
+    background-color: #FCFCFC;
+    border-radius: 50%;
+}
+
+.button5, .button6, .button7, .button8, .button9, .button10 {
+    display: none;
+}
+
+/* .container.dragging .card {
+    user-select: none;
+}
+
+.container.dragging {
+    cursor: grab;
+} */
+
+@media screen and (max-width: 1506px) {
+    .holder .container{
+        grid-auto-columns: calc((100%/4) - 24px);
+    }
+    .button5 {
+        display:flex;
+    }
+    .holder .container {
+        gap: 12px;
+    }
+}
+
+@media screen and (max-width: 1375px) {
+    .card-extra {
+        display: none;
+    }
+    .holder .container{
+        grid-auto-columns: calc((100%/3) );
+    }
+    .button6 {
+        display: flex;
+    }
+    .arrowes {
+        width: 200px;
+    }
+    .holder .container {
+        width: 1100px;
+        gap: 0px;
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+    .holder .container{
+        grid-auto-columns: calc((100%/2));
+    }
+    .button7, .button8, .button9, .button10{
+        display:flex;
+    }
+    .holder .container {
+        width: 600px;
+        gap: 0px;
+    }
+    .arrowes {
+        width: 350px;
+        margin-top: 30px;
+    } 
+}
+
+@media screen and (max-width: 575px) {
+    .holder .container{
+        grid-auto-columns: calc((100%/2));
+        gap: 160px;
+    }
+    .button7, .button8, .button9, .button10{
+        display:flex;
+    }
+    .holder .container {
+        width: 600px;
+        gap: 0px;
+    }
+    .arrowes {
+        width: 350px;
+        margin-top: 30px;
+    } 
+}

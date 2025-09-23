@@ -1,0 +1,119 @@
+@media screen and (max-width: 1400px) {
+    .bnana {
+        width: 600px;
+    }
+    .detail {
+        width: 500px;
+    }
+    /* .expe2img {
+        max-width: ;
+    } */
+    .discription {
+        width: 50%;
+        height: 20%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .bnana {
+        width: 500px;
+    }
+    .detail {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+    .heroB {
+        margin-right: 16px;
+    }
+    .card1{
+        margin-right: 0px;
+    }
+    .card2{
+        margin-right: 0px;
+    }
+    .cards {
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+    }
+    .cardB {
+        margin-bottom: 16px;
+    }
+    .heroB-secound {
+        margin-left: 16px;
+    }
+    .heroTitle, .heroDisc, .expedis, .expeTitle,
+    .expe2Title, .expe2dis{
+        text-align: center;
+    }
+    .heroBdiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-pic {
+        margin-right: 0;
+        margin-top: 50px;
+        width: 70vh;
+        height: inherit;
+    }
+    .heroDetail {
+        margin-left: 0;
+    }
+    .back {
+        padding-bottom: 30px;
+    }
+    .byebye {
+        display: none;
+    }
+    .expe {
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 100%;
+        margin: auto;
+        margin-top: 144px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .detail {
+        width: 481px;
+        
+    }
+    .bnana {
+        margin-left: 95px;
+    }
+    .image1 {
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+    }
+    .expe2 {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        margin-top: 144px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .carddis {
+        text-align: left;
+    }
+    .expe2img {
+        margin-top: 40px;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+
+}
+
+
