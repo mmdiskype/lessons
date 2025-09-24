@@ -54,30 +54,30 @@
 --gray-light--5: rgba(194, 201, 210, 1);
 --gray-light--6: rgba(182, 190, 201, 1);
 --gray-light--7: rgba(169, 180, 191, 1);
---gray-light--8: rgba(157, 169, 182, 1);
+--gray-light--8: rgba(157, 169, 182, 0.476);
 
 /* Text-size styles */
---h1: 64px;
---h2: 48px;
---h3: 32px;
---h4: 24px;
---h5: 20px;
---h6: 18px;
---caption: 12px;
---overline: 12px;
---sub--1: 24px;
---sub--2: 20px;
---sub--3: 16px;
---sub--4: 14px;
---body--1: 24px;
---body--2: 20px;
---body--3: 16px;
---body--4: 14px;
---button--lg: 15px;
---button--md: 14px;
---button--sm: 13px;
+--h1: 4rem;
+--h2: 3rem;
+--h3: 2rem;
+--h4: 1.5rem;
+--h5: 1.5rem;
+--h6: 1.125rem;
+--caption: 0.75rem;
+--overline: 0.75rem;
+--sub--1: 1.5rem;
+--sub--2: 1.25rem;
+--sub--3: 1rem;
+--sub--4: 0.875rem;
+--body--1: 1.5rem;
+--body--2: 1.25rem;
+--body--3: 1rem;
+--body--4: 0.875rem;
+--button--lg: 0.9rem;
+--button--md: 0.875rem;
+--button--sm: 0.8rem;
 
-/* mystyle */
+/* other style */
 --margin: 5.5vh;
 }
 
@@ -98,12 +98,6 @@
 }
 .logoLink {
     text-decoration: none;
-}
-.logoImage {
-    width: 44px;
-    height: 44px;
-    background-color: red;
-    display: inline-block;
 }
 .logoName {
     display: inline-block;
@@ -136,7 +130,7 @@
     height: 40px;
     border-radius: 7px;
     color: white;
-    background-color: black;
+    background-color: var(--blue-dark--10);
     font-size: var(--sub--3);
     cursor: pointer;
 }
@@ -207,7 +201,7 @@
     align-items: center;
 }
 .bnana {
-    width: 700px;
+    width: 100%;
     height: auto;
 }
 .detail {
@@ -432,4 +426,79 @@
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 40px;
+}
+.ceopart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 88px;
+}
+.ceotitle {
+    font-size: var(--h2);
+    text-align: center;
+}
+.ceoexpe {
+    font-size: var(--body--2);
+    margin-top: 16px;
+    text-align: center;
+}
+.ceocard {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-style: solid;
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: var(--gray-light--8);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 700px;
+}
+.ceoName {
+    font-size: var(--h3);
+    font-weight: 600;
+}
+.ceoCardtitle {
+    font-size: var(--body--4);
+    font-weight: 400;
+    margin-top: 4px;
+}
+.ceodis {
+    font-size: var(--body--3);
+    font-weight: 400;
+    margin-top: 16px;
+}
+.ceocardditail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    margin-left: 24px;
+    width: 600px;
+}
+
+.ceocontain {
+    margin-top: 36px;
+    width: 764px;
+    margin-bottom: 64px;
+    
+}
+.listcontain {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    align-items: center;
+    overflow-x:scroll;
+    /* padding-left: 16px;
+    padding-right: 16px; */
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+.ceofimage {
+    margin-top: 10px;
+}
+.listcontain.scrollend {
+    scroll-behavior: auto;
 }

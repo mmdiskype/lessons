@@ -11,6 +11,7 @@
     .discription {
         width: 50%;
         height: 20%;
+        min-width: 380px;
     }
 }
 
@@ -31,6 +32,9 @@
     }
     .heroB {
         margin-right: 16px;
+    }
+    .bnana {
+        width: 80%;
     }
     .card1{
         margin-right: 0px;

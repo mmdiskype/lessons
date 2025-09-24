@@ -1,8 +1,10 @@
 import {options} from './checked.js';
 let checkedvalue = 1;
 
+const ceoitem = document.querySelector('.listcontain');
+let cardsize = document.querySelector('.ceocard').offsetWidth;
 
-
+ceoitem.scroll
 function companyresponsive () {
     window.addEventListener('resize', () => {
         if (screen.width < 910) {
@@ -27,12 +29,18 @@ function companyresponsive () {
                     <img src="image/discript.svg">
                 </div>
             `;
-            console.log('850 generated');
+            
             document.querySelector('.brands').style.display = 'flex';
             document.querySelector('.brands').style.flexDirection = 'column';
             document.querySelector('.brands').style.padding = '0px';
             document.querySelector('.brands').style.justifyContent = 'center';
             document.querySelector('.brands').style.padding = '0px';
+        }
+        if ("ontouchstart" in document.body) {
+            document.querySelector('.container').style.overflowX = 'scroll';
+            document.querySelector('.container').classList.add('draggingmobile');
+
+            
         }
     })
     
@@ -42,24 +50,37 @@ companyresponsive ();
 
 
 
+const container = document.querySelector('.container');
+let dragcheck = false;
+
+const draggingstart = () => {
+    dragcheck = true
+}
+
+const dragging = (e) => {
+    if(!dragcheck) {return}
+    container.scrollLeft = e.pageX;
+}
+
+container.addEventListener('mousemove', dragging);
+container.addEventListener('mousedown', draggingstart)
+
+setInterval(() => { 
+    ceoitem.scrollLeft += cardsize+31;
+    console.log(ceoitem.scrollLeft);
+    check()
+ }, 2000);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function check() {
+    if (ceoitem.scrollLeft > 3082.1) {
+        ceoitem.classList.add('scrollend')
+        ceoitem.scrollLeft = 0;
+        ceoitem.classList.remove('scrollend')
+    }
+}
+// for getting the positioning of mouse you can use e.pageX
 
 // const container = document.querySelector('.container');
 // let dragcheck = false;
