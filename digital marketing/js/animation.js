@@ -1,4 +1,5 @@
 gsap.registerPlugin(SplitText, ScrollTrigger, Flip);
+let darkOn = false;
 const ceoitem = document.querySelector('.listcontain');
 let cardsize = document.querySelector('.ceocard').offsetWidth;
 
@@ -232,14 +233,50 @@ if (screen.width > 1100) {
 
 
 document.querySelector('.darkcontain').addEventListener('click' , () => {
-        document.addEventListener("DOMContentLoaded", (event) => {
-                const state = Flip.getState(".darkcontain", { props: "width,height"});
-                document.querySelector('.darkcontain').classList.toggle('newone')
-                
-        })
-        console.log('done')
+        const switching = gsap.timeline({onStart: flippingcon() })
+        function flippingcon() {
+                document.querySelector('.darkicon').style.display = 'none';
+                const state = Flip.getState('.darkcontain', { props: 'backgroundColor'});
+                document.querySelector('.darkcontain').classList.toggle('newone1');
+                Flip.from(state, {
+                duration: 0.7,
+                ease: "power1.inOut",
+                absolute: true,
+                });
+        }
+        switching.to('.darkcontain', {duration: 1, opacity: 0}, "+=1");
+        setTimeout(() => console.log("bnana"), 2000)
+        // const switchingback = gsap.timeline({onStart: flippingback() })
+        // function flippingback() {
+        //         document.querySelector('.darkicon').style.display = 'flex';
+        //         const state2 = Flip.getState('.darkcontain', { props: 'backgroundColor'});
+        //         document.querySelector('.darkcontain').classList.toggle('newone2');
+        //         Flip.from(state2, {
+        //         duration: 0.7,
+        //         ease: "power1.inOut",
+        //         absolute: true,
+        //         });
+        // }
+        // fine till here
+        // function flippingback() {
+        //         document.querySelector('.darkicon').style.display = 'none';
+        //         const state = Flip.getState('.darkcontain', { props: 'backgroundColor'});
+        //         document.querySelector('.darkcontain').classList.remove('newone1');
+        // }
+
+       
 })
 
+document.querySelector('.heroB').addEventListener('click', () => {
+        console.log('first click');
+        setTimeout(gochigochi() ,2000);
+})
+document.querySelector('.heroB-secound').addEventListener('click', ()=> {
+        console.log('mnb')
+})
+function gochigochi() {
+                document.querySelector('.heroB-secound').click();
+        }
 function ceocardmove () {
     setInterval(() => { 
         ceoitem.scrollLeft += cardsize+32;
