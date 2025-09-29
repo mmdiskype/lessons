@@ -1,7 +1,62 @@
 gsap.registerPlugin(SplitText, ScrollTrigger, Flip);
-let darkOn = false;
+let darkOn;
 const ceoitem = document.querySelector('.listcontain');
 let cardsize = document.querySelector('.ceocard').offsetWidth;
+let theme = document.querySelector('.darkfile');
+const darkbutton = document.querySelector('.darkcontain');
+
+function darksafe () {
+        if (localStorage.getItem(darkOn) === null) {
+                darkOn = false;
+                localStorage.setItem('darkOn', darkOn);
+        }else if (localStorage.getItem(darkOn) !== null) {
+                darkOn = localStorage.getItem(darkOn)
+        }
+}
+function darkall () {
+        darksafe ();
+        function currentcolor () {
+                if (localStorage.getItem(darkOn) === true) {
+                        theme.setAttribute('href', 'css/darkmode.css');
+                }else if (localStorage.getItem(darkOn) === false) {
+                        theme.setAttribute('href', 'css/lightmode.css');
+                }
+        }
+        currentcolor ()
+
+
+        function changeofcolor () {
+                darkOn = localStorage.getItem('darkOn');
+                darkbutton.addEventListener('click', () => {
+                        let current = darkOn;
+                        if (current === false) {
+                                theme.setAttribute('href', 'css/darkmode.css');
+                                darkOn = true;
+                                localStorage.setItem('darkOn', darkOn);
+                                document.querySelector('.darkicon').setAttribute('src', 'image/darkmodeimage/moonDark.svg');
+                                document.querySelector('.searchsvg').setAttribute('src', 'image/darkmodeimage/searchDark.svg');
+                                document.querySelector('.searchsvg1').setAttribute('src', 'image/darkmodeimage/UserDark.svg');
+                                document.querySelector('.mmdi-logo').setAttribute('src', 'image/darkmodeimage/mmdilogoDark.svg');
+                                document.querySelector('.bnana').setAttribute('src', 'image/darkmodeimage/googleDark.svg');
+                                document.querySelector('.seemore').setAttribute('src', 'image/darkmodeimage/arrow-rightDark.svg');
+                                document.querySelector('.seemore1').setAttribute('src', 'image/darkmodeimage/arrow-rightDark.svg');
+                        }else{
+                                theme.setAttribute('href', 'css/lightmode.css');
+                                darkOn = false;
+                                localStorage.setItem('darkOn', darkOn);
+                                document.querySelector('.darkicon').setAttribute('src', 'image/moon.svg');
+                                document.querySelector('.searchsvg').setAttribute('src', 'image/Search.svg');
+                                document.querySelector('.searchsvg1').setAttribute('src', 'image/Users.svg');
+                                document.querySelector('.mmdi-logo').setAttribute('src', 'image/mmdi-logo.svg');
+                                document.querySelector('.bnana').setAttribute('src', 'image/google.svg');
+                                document.querySelector('.seemore').setAttribute('src', 'image/arrow-right.svg');
+                                document.querySelector('.seemore1').setAttribute('src', 'image/arrow-right.svg');
+                        }
+                })
+        }
+        changeofcolor();
+}
+
 
 if (screen.width > 1100) {
         document.addEventListener("DOMContentLoaded", (event) => {
@@ -233,7 +288,7 @@ if (screen.width > 1100) {
 
 
 document.querySelector('.darkcontain').addEventListener('click' , () => {
-        const switching = gsap.timeline({onStart: flippingcon() })
+        const switching = gsap.timeline({onStart: flippingcon(),onComplete: darkall() })
         function flippingcon() {
                 document.querySelector('.darkicon').style.display = 'none';
                 const state = Flip.getState('.darkcontain', { props: 'backgroundColor'});
@@ -245,38 +300,9 @@ document.querySelector('.darkcontain').addEventListener('click' , () => {
                 });
         }
         switching.to('.darkcontain', {duration: 1, opacity: 0}, "+=1");
-        setTimeout(() => console.log("bnana"), 2000)
-        // const switchingback = gsap.timeline({onStart: flippingback() })
-        // function flippingback() {
-        //         document.querySelector('.darkicon').style.display = 'flex';
-        //         const state2 = Flip.getState('.darkcontain', { props: 'backgroundColor'});
-        //         document.querySelector('.darkcontain').classList.toggle('newone2');
-        //         Flip.from(state2, {
-        //         duration: 0.7,
-        //         ease: "power1.inOut",
-        //         absolute: true,
-        //         });
-        // }
-        // fine till here
-        // function flippingback() {
-        //         document.querySelector('.darkicon').style.display = 'none';
-        //         const state = Flip.getState('.darkcontain', { props: 'backgroundColor'});
-        //         document.querySelector('.darkcontain').classList.remove('newone1');
-        // }
-
-       
 })
 
-document.querySelector('.heroB').addEventListener('click', () => {
-        console.log('first click');
-        setTimeout(gochigochi() ,2000);
-})
-document.querySelector('.heroB-secound').addEventListener('click', ()=> {
-        console.log('mnb')
-})
-function gochigochi() {
-                document.querySelector('.heroB-secound').click();
-        }
+
 function ceocardmove () {
     setInterval(() => { 
         ceoitem.scrollLeft += cardsize+32;
@@ -292,4 +318,6 @@ function ceocardmove () {
 
     }
 }
+
+// testing ground
 

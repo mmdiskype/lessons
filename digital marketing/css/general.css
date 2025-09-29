@@ -124,8 +124,8 @@ body {
 }
 .headerLinks, .headerLinkshidden {
     text-decoration: none;
+    font-weight: 400;
     font-size: var(--body--3);
-    color: var(--orange-dark--9);
 }
 .headerLinkshidden {
     display: none;
@@ -140,10 +140,9 @@ body {
     width: 110px;
     height: 40px;
     border-radius: 7px;
-    color: white;
-    background-color: var(--blue-dark--10);
     font-size: var(--sub--3);
     cursor: pointer;
+    font-weight: 600;
 }
 .darkcontain {
     width: var(--buttonone);
@@ -152,7 +151,6 @@ body {
     border-width: 1px;
     border-radius: 50%;
     margin-right: 10px;
-    background-color: var(--orange-dark--9);
     cursor: pointer;
     z-index: 1;
 }
@@ -163,29 +161,23 @@ body {
     justify-content: space-between;
     margin-top: 116px;
 }
-.heroImage {
-    width: 515px;
-    height: 515px;
-    border-radius: 9999px;
-    background-color: rgb(211, 57, 131);
-    margin-right: var(--margin);
-}
 .heroDetail {
     margin-left: var(--margin);
     margin-top: 96px;
 }
 .heroTitle {
     font-size: var(--h1);
+    font-weight: 700;
 }
 .heroDisc {
     margin-top: 32px;
     font-size: var(--body--2);
+    font-weight: 400;
 }
 .heroIcon {
     width: 24px;
     height: 24px;
     display: inline-block;
-    background-color: var(--blue-dark--4);
     border-radius: 99px;
     margin-right: 10px;
 }
@@ -200,11 +192,10 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 10px;
-    background-color: rgba(21, 11, 0, 1);
-    color: white;
     margin-top: 40px;
     border-style: none;
     cursor: pointer;
+    font-weight: 600;
 }
 .heroB-secound {
     margin-left: 24px;
@@ -213,10 +204,8 @@ body {
     width: 150px;
     height: 40px;
     border-radius: 20px;
-    background-color: antiquewhite;
 }
 .brands {
-    background-color: var(--blue-dark--7);
     display: flex;
     justify-content: space-between;
     padding-left: var(--margin);
@@ -241,6 +230,7 @@ body {
 }
 .award {
     font-size: 48px;
+    font-weight: 600;
 }
 .award-disc {
     font-size: var(--body--3);
@@ -257,11 +247,12 @@ body {
 }
 .expeTitle {
     font-size: var(--h2);
+    font-weight: 700;
 }
 .expedis {
     font-size: var(--body--2);
-    color: var(--gray-dark--7);
     margin-top: 16px;
+    font-weight: 400;
 }
 .image1 {
     display: flex;
@@ -271,7 +262,7 @@ body {
     width: 95%;
     height: 64px;
     border-style: solid;
-    border-color: #B5B5B5;
+    
     border-width: 2px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -282,6 +273,7 @@ body {
 .radiodis {
     margin-left: 20px;
     font-size: var(--body--2);
+    font-weight: 400;
 }
 .radioe, .radioeplay {
     width: 31px;
@@ -301,10 +293,12 @@ body {
 }
 .expe2Title {
     font-size: var(--h2);
+    font-weight: 700;
 }
 .expe2dis, .expe2disq {
     font-size: var(--body--2);
     margin-top: 16px;
+    font-weight: 400;
 }
 .cards {
     display: flex;
@@ -315,7 +309,6 @@ body {
     margin-top: 32px;
     border-radius: 16px;
     width: 320px;
-    border-color: var(--gray-light--3);
     display: flex;
     flex-direction: column;
     border-style: solid;
@@ -345,8 +338,6 @@ body {
 }
 .cardB {
     border-radius: 4px;
-    background-color: rgba(21, 11, 0, 1);
-    color: white;
     border-style: none;
     width: 120px;
     height: 32px;
@@ -356,6 +347,7 @@ body {
 }
 .buttonone {
     margin-left: 20px;
+    font-weight: 700;
 }
 .ennoying {
     display: flex;
@@ -367,7 +359,6 @@ body {
     margin-left: 16px;
 }
 .tool {
-    background-color: var(--blue-dark--7);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -380,7 +371,6 @@ body {
     width: 90%;
 }
 .thetool {
-    background-color: #B5B5B5;
     border-radius: 5px;
     width: 220px;
     height: 80px;
@@ -388,12 +378,11 @@ body {
 .tooldis {
     text-align: center;
     font-size: var(--body--2);
-    color: var(--blue-light--1);
     margin-top: 16px;
 }
 .tooltitle {
     font-size: var(--h2);
-    color: var(--blue-light--1);
+    
     margin-top: 32px;
     text-align: center;
 }
@@ -416,7 +405,7 @@ body {
     height: 70vh;
     margin-right: var(--margin);
 }
-.searchsvg {
+.searchsvg, .searchsvg1 {
     width: 24px;
     height: 24px;
     padding-right: 8px;
@@ -425,7 +414,7 @@ body {
     width: 24px;
     height: 24px;
 }
-.seemore {
+.seemore, .seemore1 {
     width: 20px;
     height: inherit;
     margin-left: 10px;
@@ -473,7 +462,6 @@ body {
     border-style: solid;
     border-radius: 12px;
     border-width: 2px;
-    border-color: var(--gray-light--8);
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
@@ -533,7 +521,6 @@ body {
 .darkcontain.newone1 {
     height: 3000px;
     width: 3000px;
-    background-color: white;
     right: -600px;
     top: -400px;
     border-radius: 50%;
@@ -548,7 +535,6 @@ body {
     border-width: 1px;
     border-radius: 50%;
     margin-right: 10px;
-    background-color: var(--orange-dark--9);
     cursor: pointer;
     z-index: 1;
 }

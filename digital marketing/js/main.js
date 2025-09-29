@@ -39,6 +39,12 @@ function companyresponsive () {
 
             
         }
+        if (screen.width < 715) {
+            document.querySelector('.bababoy').innerHTML = `
+                <p class="heroDisc">welcome to mmdi where we rivulotionize your online status throw seo services and digital
+                    marketing boosting your business and sale expedantioally</p>
+            `;
+        }
     })
     
 }
@@ -75,18 +81,21 @@ companyresponsive ();
 // container.addEventListener('touchend', dragstop)
 
 
-const container = document.querySelector('.container');
-let dragcheck = false;
 
-const draggingstart = () => {
-    dragcheck = true
-}
 
-const dragging = (e) => {
-    if(!dragcheck) {return}
-    container.scrollLeft = e.pageX;
-}
 
-container.addEventListener('mousemove', dragging);
-container.addEventListener('mousedown', draggingstart)
+// const container = document.querySelector('.container');
+// let dragcheck = false;
+
+// const draggingstart = () => {
+//     dragcheck = true
+// }
+
+// const dragging = (e) => {
+//     if(!dragcheck) {return}
+//     container.scrollLeft = e.pageX;
+// }
+
+// container.addEventListener('mousemove', dragging);
+// container.addEventListener('mousedown', draggingstart)
 
