@@ -299,7 +299,7 @@ document.querySelector('.darkcontain').addEventListener('click' , () => {
                 absolute: true,
                 });
         }
-        switching.to('.darkcontain', {duration: 1, opacity: 0}, "+=1");
+        switching.to('.darkcontain', {duration: 1, opacity: 0, onStart: darkall()}, "+=1");
 })
 
 
