@@ -1,18 +1,31 @@
 import express from 'express';
+import storage from 'node-persist';
 import { v4 as uuidv4 } from 'uuid';
 const router = express.Router();
-let users = []
+let users = [];
+let allusers3 = [];
+storage.initSync({
+    dir: 'userData',
+});
+async function allusers2() {
+    await storage.forEach(async function(alluser1) {
+	    allusers3.push(alluser1);
+    });
+    return await allusers3;
+}
 
-router.get('/', (req, res) => {
-    res.send(users);
-    console.log(users)
+router.get('/', async(req, res) => {
+    allusers2();
+    res.send(allusers3);
+    allusers3 = [];
 })
 
-router.post('/', (req, res) => {
+router.post('/', async(req, res) => {
     const user = req.body;
     const userwithId = { ...user , id: uuidv4(), status: "available", logged: "out"};
-    users.push(userwithId);
+    storage.setItem(userwithId.username, userwithId);
     console.log('route reached');
+
     res.send(`user with the name: ${user.username} created`);
 })
 
@@ -22,9 +35,20 @@ router.get('/:id', (req, res) => {
     res.send(founduser);
 })
 
-router.delete('/:id', (req, res) => {
+async function deleteuser (id) {
+    await storage.forEach(async function(alluser1) {
+	    if (alluser1.key === `"${id}"`) {
+            console.log(alluser1.key)
+            await storage.removeItem(`"${alluser1.key}"`);
+        }
+    });
+    
+}
+
+router.delete('/:id', async(req, res) => {
     const { id } = req.params;
-    users = users.filter((user) => user.id !== id)
+    console.log(id);
+    deleteuser (id);
     res.send(`user with the id: ${id} was deleted`)
 })
 
@@ -43,3 +67,4 @@ router.patch('/:id', (req, res) => {
 })
 
 export default router;
+
