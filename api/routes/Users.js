@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const user = req.body;
-    const userwithId = { ...user , id: uuidv4(), status: "available"};
+    const userwithId = { ...user , id: uuidv4(), status: "available", logged: "out"};
     users.push(userwithId);
     console.log('route reached');
     res.send(`user with the name: ${user.username} created`);

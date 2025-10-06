@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import router from './routes/Users.js';
+import avarouter from './routes/ApiAvailble.js';
 import fs from 'fs';
 const fileName = 'users.json';
 
@@ -8,6 +9,7 @@ const app = express();
 const port = 8080;
 app.use(bodyParser.json());
 app.use('/users', router);
+app.use('/ava', avarouter);
 
 
 
